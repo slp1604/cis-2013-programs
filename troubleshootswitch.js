@@ -26,31 +26,40 @@ var fixPrinter = function() {
 
     //enter your code here and don't forget to send the output to the DOM
 switch (true) {
+    //Y-Y-Y answers to printer questions 
     case boolPrinting === true && boolRedLight === true && boolRecognised === true:
         stringOutput = stringMessage2 + "\n" + stringMessage3 + "\n" + stringMessage4;
         break;
+    //Y-Y-N answers to printer questions
     case boolPrinting === true && boolRedLight === true && boolRecognised === false:
         stringOutput = stringMessage4 + "\n" + stringMessage5;
         break;
+    //Y-N-Y answers to printer questions
     case boolPrinting === true && boolRedLight === false && boolRecognised === true:
         stringOutput = stringMessage1 + "\n" + stringMessage2 + "\n" + stringMessage3;
         break;
+    //Y-N-N answers to printer questions
     case boolPrinting === true && boolRedLight === false && boolRecognised === false:
         stringOutput = stringMessage5;
         break;
+    //N-Y-Y answers to printer questions
     case boolPrinting === false && boolRedLight === true && boolRecognised === true:
         stringOutput = stringMessage3 + "\n" + stringMessage4;
         break;
+    //N-Y-N answers to printer questions
     case boolPrinting === false && boolRedLight === true && boolRecognised === false:
         stringOutput = stringMessage4;
         break;
+    //N-N-Y answers to printer questions
     case boolPrinting === false && boolRedLight === false && boolRecognised === true:
         stringOutput = stringMessage3;
         break;
+    //N-N-N answers to printer questions
     default:
         stringOutput = stringMessage6;
         break;
     }
+//Push results back to html
 $("output").value = stringOutput;
 
 };
